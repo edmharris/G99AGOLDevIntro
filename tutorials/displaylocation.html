@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
+    <title>ArcGIS Maps SDK for JavaScript Tutorials: Display your location</title>
 
     <style>
       html,
@@ -14,15 +14,27 @@
         width: 100%;
       }
     </style>
-    
+
     <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.25/"></script>
-    
+
+
     <script>
-      require(["esri/config", "esri/Map", "esri/views/MapViewm esri/widgets/Locate"], 
-        function(esriConfig, Map, MapView, Locate) {
-        
-        esriConfig.apiKey = "AAPK49520f8b2a3d4a83a5a7cf10b85c14c5uecET1RLmU_v4pLWco0wnOWXd_QyoqXvw81AGFz6xRrR0s_-SfLrA6LJ-9XKU4ig";
+      require([
+          "esri/config",
+          "esri/Map",
+          "esri/views/MapView",
+          "esri/widgets/Locate",
+
+        ], function(
+            esriConfig,
+            Map,
+            MapView,
+            Locate,
+
+        ) {
+
+        esriConfig.apiKey = "YOUR_API_KEY";
 
         const map = new Map({
           basemap: "arcgis-navigation"
@@ -34,7 +46,7 @@
           center: [-40, 28],
           zoom: 2
         });
-        
+
         const locate = new Locate({
           view: view,
           useHeadingEnabled: false,
